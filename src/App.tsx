@@ -1,35 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Typewriter from "./components/Typewriter";
+import "./assets/styles/App.css";
+import face from "../src/assets/images/ai_face.png";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="App">
+      <div className="typewriter-text-container">
+        <Typewriter
+          text="Hello! Welcome to Fit Check. This is a website that helps you save and assess different types of outfit. TO START SIGN UP OR LOGIN"
+          speed={70}
+          pause={1000}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+      <img src={face} className="model_image"></img>
+
+      <button className="button signup">Sign Up</button>
+      <button className="button login">Login</button>
+    </div>
+  );
 }
 
-export default App
+export default App;
